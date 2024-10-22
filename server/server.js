@@ -20,6 +20,7 @@ app.post('/generate-content', async (req, res) => {
   try {
     const result = await model.generateContent(prompt)
     res.json({ response: result.response.text() })
+    console.log(result)
   } catch (error) {
     console.error('Error generating content:', error)
     res.status(500).json({ error: 'Failed to generate content' })
